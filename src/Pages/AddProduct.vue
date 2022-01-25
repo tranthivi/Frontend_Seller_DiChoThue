@@ -27,11 +27,10 @@
                                                 <input type="text" class="form-control" required="" placeholder="Tên sản phẩm">
                                             </div>
 
-                                            <div class="form-group col-sm-2 img-picker-container"> 
-                                                <label>Ảnh đại diện</label>
-                                                <div class="img-picker"><div class="form-control img-upload-btn"><i class="fas fa-plus"></i><input type="file" name="images"></div></div>
-                                            </div> 
-
+                                            <div class="form-group">
+                                                <label>Hình ảnh</label>
+                                                <input type="text" class="form-control" required="" placeholder="Link url">
+                                            </div>
 
                                             <div class="form-group">
                                                 <label>Mô tả</label>
@@ -54,14 +53,14 @@
                                                 <label>Loại</label>
                                                 <div>
                                                     <select class="form-control">
-                                                        <option>Rau củ quả</option>
-                                                        <option>Thịt</option>
-                                                        <option>Trứng</option>
-                                                        <option>Sữa</option>
-                                                        <option>Thuốc</option>
-                                                        <option>Trái cây</option>
-                                                        <option>Vật tư y tế</option>
-                                                        <option>Cá</option>
+                                                        <option value = "1">1 - Rau củ quả</option>
+                                                        <option value = "2">2 - Thịt</option>
+                                                        <option value = "3">3 - Trứng</option>
+                                                        <option value = "4">4 - Sữa</option>
+                                                        <option value = "5">5 - Thuốc</option>
+                                                        <option value = "6">6 - Trái cây</option>
+                                                        <option value = "7">7 - Vật tư y tế</option>
+                                                        <option value = "8">8 - Cá</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -91,12 +90,8 @@
                                     </div>
                                 </div>
                             </div> <!-- end col -->
-        
-
-                            
-                        </div> <!-- end row -->      
-
-                        
+                      
+                        </div> <!-- end row -->                             
                     </div>
                     <!-- container-fluid -->
 
@@ -109,3 +104,6 @@
 
             </div>
 </template>
+<script>
+
+</script>

@@ -104,14 +104,14 @@ export default {
 
   methods: {
     fetchData() {
-      let url = 'https://localhost:5001/api/orderlist';
+      let url = 'https://localhost:44368/api/orderlist';
       axios.get(url).then((response) => {
        this.productJson = response.data; 
       });
     },
 
    deleteproduct(cmnd){
-        let url = `https://localhost:5001/api/orderlist/${SanPhamId}`;
+        let url = `https://localhost:44368/api/orderlist/${SanPhamId}`;
        
         axios.delete(url, SanPhamId).then(response => {
             if (response.data == 'success') {
@@ -132,7 +132,7 @@ export default {
             product.TrangThai = this.LOCKED_STATE;
         }
 
-        let url = 'https://localhost:5001/api/orderlist';
+        let url = 'https://localhost:44368/api/orderlist';
         axios.put(url, product).then(response => {
            console.log(response.data);
         }) 

@@ -73,8 +73,8 @@
                                                      <td>
                                                         <div class="btn-toolbar form-group mb-0">
                                                             <div class="row">
-                                                                <a href="/#/UpdateProduct" role="button" class="btn btn-success waves-effect waves-light m-r-5"><i class="far fa-edit"></i></a>                                      
-                                                        <button type="button" class="btn btn-danger waves-effect waves-light m-r-5" data-toggle="modal" data-target="#alertDeleteModal"><i class="far fa-trash-alt"></i></button>
+                                                                <a href="/#/UpdateProduct" role="button" class="btn btn-success waves-effect waves-light m-r-5" v-on:click = "Put(sanpham)"><i class="far fa-edit"></i></a>                                      
+                                                        <button type="button" class="btn btn-danger waves-effect waves-light m-r-5" data-toggle="modal" data-target="#alertDeleteModal" v-on:click = "deleteproduct(sanpham.SanPhamId)"><i class="far fa-trash-alt"></i></button>
                                                     </div>
                                                 </div>
                                             </td>
@@ -138,20 +138,24 @@ export default {
 
   methods: {
     fetchData() {
-      let url = 'https://localhost:5001/api/product';
+      let url = 'https://localhost:44368/api/product/1';
       axios.get(url).then((response) => {
        this.productJson = response.data; 
       });
     },
 
-   deleteproduct(cmnd){
-        let url = `https://localhost:5001/api/sanpham/${SanPhamId}`;
+   deleteproduct(SanPhamId){
+        let url = `https://localhost:44368/api/product/delete/${SanPhamId}`;
        
-        axios.delete(url, SanPhamId).then(response => {
+        axios.get(url).then(response => {
             if (response.data == 'success') {
                 // Tạm thời
-                this.$router.go();
+                
             }
+            let url = 'https://localhost:44368/api/product/1';
+            axios.get(url).then((response) => {
+            this.productJson = response.data; 
+             });
         }) 
         .catch(error => {
             this.errorMessage=error.message; 
@@ -160,13 +164,7 @@ export default {
     },
 
     updateproductState(product){
-        if (product.TrangThai === this.LOCKED_STATE) {
-            product.TrangThai = this.ACTIVE_STATE;
-        } else {
-            product.TrangThai = this.LOCKED_STATE;
-        }
-
-        let url = 'https://localhost:5001/api/product';
+        let url = 'https://localhost:44368/api/product';
         axios.put(url, product).then(response => {
            console.log(response.data);
         }) 
@@ -182,5 +180,4 @@ export default {
     }
   },
 }
-
 </script>

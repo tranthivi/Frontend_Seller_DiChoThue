@@ -6,7 +6,7 @@
                         <div class="page-title-box">
                             <div class="row align-items-center">
                                 <div class="col-sm-6">
-                                    <h4 class="page-title">Update Pizza</h4>
+                                    <h4 class="page-title">Sửa sản phẩm</h4>
                                 </div>
                             </div> <!-- end row -->
                         </div>
@@ -30,13 +30,6 @@
                                                 <label>Tên</label>
                                                 <input type="text" class="form-control" required="" placeholder="Tên sản phẩm">
                                             </div>
-
-                                            <div class="form-group col-sm-2 img-picker-container"> 
-                                                <label>Ảnh đại diện</label>
-                                                <div class="img-picker"><div class="form-control img-upload-btn"><i class="fas fa-plus"></i><input type="file" name="images"></div></div>
-                                            </div> 
-
-
                                             <div class="form-group">
                                                 <label>Mô tả</label>
                                                 <div>
